@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start:firefox": "web-ext run --source-dir ./extension-dist/"
+  },
+  "devDependencies": {
+    "web-ext": "^7.6.2"
+  }
+}

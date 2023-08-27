@@ -1,3 +1,7 @@
 node_modules/
-
 dist/
+pnpm-lock.yaml
+
+# temporary ignore
+.npmrc
+README.md

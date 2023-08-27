@@ -1,4 +1,4 @@
-import type { Manifest } from 'webextension-polyfill-ts'
+import type { Manifest } from 'webextension-polyfill'
 
 import { defineConfig } from 'vite'
 import webExtension from '@samrum/vite-plugin-web-extension'
@@ -49,6 +49,7 @@ export default defineConfig({
   ],
   assetsInclude: ['icons/**.png'],
   build: {
+    sourcemap: isDev ? 'inline' : false,
     // assetsDir: "assets",
   },
 })

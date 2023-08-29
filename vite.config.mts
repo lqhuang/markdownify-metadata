@@ -4,20 +4,14 @@ import { defineConfig } from 'vite'
 import webExtension from '@samrum/vite-plugin-web-extension'
 
 const manifest: Manifest.WebExtensionManifest = {
-  manifest_version: 2, // v3 is still buggy
+  manifest_version: 2, // v3 is still buggy in Firefox
   name: 'markify-webinfo',
   description: 'Extract website info into markdown link',
   version: '0.0.1',
   icons: {
     '64': 'icons/icon.png',
   },
-  permissions: ['clipboardWrite'],
-  content_scripts: [
-    {
-      matches: ['*://github.com/*'],
-      js: ['src/content_script.js'],
-    },
-  ],
+  permissions: ['tabs', 'activeTab', 'clipboardWrite'],
   browser_action: {
     default_title: 'markify',
     default_icon: {
@@ -25,6 +19,12 @@ const manifest: Manifest.WebExtensionManifest = {
     },
     default_popup: 'src/action/index.html',
   },
+  // content_scripts: [
+  //   {
+  //     matches: ['<all_urls>'],
+  //     js: ['src/content_script.js'],
+  //   },
+  // ],
   options_ui: {
     page: 'src/options/index.html',
   },

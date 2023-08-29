@@ -49,5 +49,6 @@ export default defineConfig({
     sourcemap: isDev ? 'inline' : false,
     copyPublicDir: true,
     watch: isDev ? {} : null,
+    target: 'esnext',
   },
 })

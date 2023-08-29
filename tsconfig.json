@@ -30,7 +30,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     // Language and Environment
-    "target": "esnext",
+    "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "preserve",
     // Completeness

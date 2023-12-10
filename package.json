@@ -4,23 +4,24 @@
     "dev": "vite",
     "test-live": "vitest",
     "vite:build": "vite build",
+    "typecheck": "tsc --noEmit",
     "web-ext:start": "web-ext run --source-dir ./dist ",
-    "web-ext:build": "web-ext build -o --source-dir ./dist --filename markify-webinfo.xpi"
+    "web-ext:build": "web-ext build -o --source-dir ./dist --filename markdownify-metadata.xpi"
   },
   "devDependencies": {
-    "@samrum/vite-plugin-web-extension": "^5.0.0",
+    "vite-plugin-web-extension": "^4.0.0",
     "@types/chrome": "^0.0.244",
-    "@types/webextension-polyfill": "^0.10.2",
+    "@types/webextension-polyfill": "^0.10.7",
     "cheerio": "1.0.0-rc.12",
-    "eslint": "^8.47.0",
-    "eslint-plugin-import": "^2.28.1",
-    "prettier": "^3.0.2",
-    "prettier-plugin-tailwindcss": "^0.5.3",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vitest": "^0.34.3",
-    "web-ext": "^7.6.2",
+    "eslint": "^8.55.0",
+    "eslint-plugin-import": "^2.29.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.7",
+    "vitest": "^1.0.4",
+    "web-ext": "^7.9.0",
     "webextension-polyfill": "^0.10.0"
   }
 }

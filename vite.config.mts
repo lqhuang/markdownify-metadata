@@ -1,11 +1,11 @@
 import type { Manifest } from 'webextension-polyfill'
 
 import { defineConfig } from 'vite'
-import webExtension from '@samrum/vite-plugin-web-extension'
+import webExtension from 'vite-plugin-web-extension'
 
-const manifest: Manifest.WebExtensionManifest = {
+const manifest: () => Manifest.WebExtensionManifest = () => ({
   manifest_version: 2, // v3 is still buggy in Firefox
-  name: 'markify-webinfo',
+  name: 'markdownify-metadata',
   description: 'Extract website info into markdown link',
   version: '0.0.1',
   icons: {
@@ -13,11 +13,11 @@ const manifest: Manifest.WebExtensionManifest = {
   },
   permissions: ['tabs', 'activeTab', 'clipboardWrite'],
   browser_action: {
-    default_title: 'markify',
+    default_title: 'markdownify-metadata',
     default_icon: {
       '64': 'icons/icon.png',
     },
-    default_popup: 'src/action/index.html',
+    default_popup: 'src/popup/index.html',
   },
   // content_scripts: [
   //   {
@@ -28,13 +28,15 @@ const manifest: Manifest.WebExtensionManifest = {
   options_ui: {
     page: 'src/options/index.html',
   },
-}
+})
 
 const isDev = process.env.NODE_ENV !== 'production'
 const isFirefox = process.env.EXTENSION === 'firefox'
 
 // https://vitejs.dev/config/
+
 export default defineConfig({
+  plugins: [webExtension({ manifest })],
   define: {
     // 'import.meta.vitest': 'undefined',
   },
@@ -43,7 +45,6 @@ export default defineConfig({
       src: `${__dirname}/src`,
     },
   },
-  plugins: [webExtension({ manifest })],
   build: {
     emptyOutDir: false,
     sourcemap: isDev ? 'inline' : false,

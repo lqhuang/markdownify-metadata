@@ -2,8 +2,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test-live": "vitest",
-    "vite:build": "vite build",
+    "build": "vite build",
+    "watch": "vite build --watch --mode development",
+    "test": "vitest",
+    "lint": "eslint --ext .ts,.js src --fix",
     "typecheck": "tsc --noEmit",
     "web-ext:start": "web-ext run --source-dir ./dist ",
     "web-ext:build": "web-ext build -o --source-dir ./dist --filename markdownify-metadata.xpi"

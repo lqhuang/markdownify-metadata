@@ -5,11 +5,7 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "strict": true,
-    "types": [
-      "vite/client",
-      "@samrum/vite-plugin-web-extension/client",
-      "vitest/importMeta"
-    ],
+    "types": ["vite/client", "vitest/importMeta"],
     // Modules
     "module": "ESNext",
     "moduleResolution": "Node",

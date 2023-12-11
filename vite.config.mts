@@ -31,14 +31,25 @@ const manifest: () => Manifest.WebExtensionManifest = () => ({
 })
 
 const isDev = process.env.NODE_ENV !== 'production'
-const isFirefox = process.env.EXTENSION === 'firefox'
+const target = process.env.TARGET || 'firefox'
 
-// https://vitejs.dev/config/
+const webExtConfig = {
+  target: 'firefox-desktop',
+  profileCreateIfMissing: true,
+  firefoxProfile: 'tmp/web-ext-profile',
+  chromiumBinary: undefined,
+  chromiumProfile: undefined,
+  startUrl: [
+    'https://github.com/quantmind/quantflow',
+    'https://github.com/lqhuang/markdownify-metadata',
+  ],
+}
 
+// docs: https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [webExtension({ manifest })],
+  plugins: [webExtension({ manifest, webExtConfig })],
   define: {
-    // 'import.meta.vitest': 'undefined',
+    'import.meta.vitest': undefined,
   },
   resolve: {
     alias: {
@@ -46,10 +57,6 @@ export default defineConfig({
     },
   },
   build: {
-    emptyOutDir: false,
-    sourcemap: isDev ? 'inline' : false,
-    copyPublicDir: true,
-    watch: isDev ? {} : null,
     target: 'esnext',
   },
 })

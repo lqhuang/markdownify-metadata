@@ -8,7 +8,7 @@
     "lint": "eslint --ext .ts,.js src --fix",
     "typecheck": "tsc --noEmit",
     "web-ext:start": "web-ext run --source-dir ./dist ",
-    "web-ext:build": "web-ext build -o --source-dir ./dist --filename markdownify-metadata.xpi"
+    "web-ext:build": "web-ext build -o --source-dir ./dist --filename markdownify-metadata-v0.0.1.xpi"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.244",

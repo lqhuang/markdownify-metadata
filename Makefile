@@ -13,6 +13,10 @@ watch:
 build:
 	pnpm run build
 
+release: build
+	pnpm run web-ext:build
+	zip -r web-ext-artifacts/markdownify-metadata-v0.0.1.zip dist/*
+
 test:
 	pnpm run test
 

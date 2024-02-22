@@ -21,3 +21,7 @@ clean:
 
 clean-all: clean
 	rm -rf node_modules/ pnpm-lock.yaml
+
+nolyfill:
+	pnpx nolyfill && pnpx nolyfill install && pnpm install
+

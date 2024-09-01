@@ -1,6 +1,6 @@
 import browser from 'webextension-polyfill'
 
-import { makeMarkdownLink } from 'src/lib/link'
+import { generateMDLink } from 'src/lib/link'
 
 const [currTab] = await browser.tabs.query({
   lastFocusedWindow: true,
@@ -10,18 +10,18 @@ const [currTab] = await browser.tabs.query({
 // console.log(currTab)
 const { title, url, status } = currTab
 
-if (status === 'complete' && url?.startsWith('https://github.com')) {
+if (status === 'complete') {
   const response = await browser.tabs.executeScript({
     code: `document.documentElement.outerHTML`,
   })
   // console.log(response.length)
   const html = response[0] as string
-
-  const linkString = makeMarkdownLink(html)
+  const url = currTab.url!
+  const linkString = generateMDLink(url, html, {})
   document.querySelector('#popup-content')!.innerHTML = `
       <code>${linkString}</code>
     `
-  navigator.clipboard.writeText(linkString)
+  await navigator.clipboard.writeText(linkString)
 } else {
   document.querySelector('#popup-content')!.innerHTML = `
       Page is not ready yet

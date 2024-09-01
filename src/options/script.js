@@ -1,1 +1,2 @@
-document.getElementById('myHeading').style.color = 'red'
+const element = document.getElementById('myHeading')
+if (element) element.style.color = 'red'

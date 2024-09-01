@@ -5,6 +5,7 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "strict": true,
+    "strictNullChecks": true,
     "types": ["vite/client", "vitest/importMeta"],
     // Modules
     "module": "ESNext",
@@ -13,6 +14,7 @@
     "paths": {
       "src/*": ["./src/*"]
     },
+    "verbatimModuleSyntax": true,
     // Emit
     "declaration": true,
     "noEmit": true,
@@ -33,5 +35,15 @@
     "skipLibCheck": true,
     "incremental": true
   },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    ".prettierrc.mjs",
+    ".eslint.config.mjs"
+  ],
   "exclude": ["dist", "node_modules"]
 }

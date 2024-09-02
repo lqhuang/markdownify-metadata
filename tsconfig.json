@@ -6,15 +6,36 @@
     "noImplicitReturns": true,
     "strict": true,
     "strictNullChecks": true,
-    "types": ["vitest/importMeta"],
-    "paths": { "src/*": ["./src/*"], "~*": ["./src/*"] },
+    "types": ["vite/client", "vitest/importMeta"],
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "paths": { "src/*": ["./src/*"] },
     "baseUrl": ".",
+    "verbatimModuleSyntax": true,
+    // Emit
+    "declaration": true,
+    "noEmit": true,
+    "sourceMap": true,
+    // JavaScript Support
+    "allowJs": true,
+    "checkJs": true,
+    // Interop Constraints
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    // Language and Environment
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "preserve",
     // Completeness
     "skipLibCheck": true,
     "incremental": true
   },
   "include": [
-    ".plasmo/index.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
@@ -24,6 +45,5 @@
     ".prettierrc.mjs",
     ".eslint.config.mjs"
   ],
-  "exclude": ["dist", "build", "node_modules"],
-  "extends": "plasmo/templates/tsconfig.base"
+  "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,7 +1,6 @@
 import type { PlasmoMessaging } from '@plasmohq/messaging'
 
 export type RequestBody = undefined
-
 export type ResponseBody = {
   html: string
   url: string

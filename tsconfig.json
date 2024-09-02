@@ -6,31 +6,9 @@
     "noImplicitReturns": true,
     "strict": true,
     "strictNullChecks": true,
-    "types": ["vite/client", "vitest/importMeta"],
-    // Modules
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
+    "types": ["vitest/importMeta"],
     "paths": { "src/*": ["./src/*"], "~*": ["./src/*"] },
     "baseUrl": ".",
-    "verbatimModuleSyntax": true,
-    // Emit
-    "declaration": true,
-    "noEmit": true,
-    "sourceMap": true,
-    // JavaScript Support
-    "allowJs": true,
-    "checkJs": true,
-    // Interop Constraints
-    "allowImportingTsExtensions": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": false,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    // Language and Environment
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "preserve",
     // Completeness
     "skipLibCheck": true,
     "incremental": true

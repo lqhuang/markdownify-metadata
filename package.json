@@ -11,7 +11,7 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "plasmo dev",
+    "dev": "plasmo dev --target=firefox-mv2",
     "build": "plasmo build",
     "package": "plasmo package",
     "test": "vitest",

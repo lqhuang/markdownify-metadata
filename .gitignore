@@ -1,15 +1,16 @@
 node_modules/
-.plasmo/
 build/
 dist/
 out/
-pnpm-lock.yaml
 tmp/
+pnpm-lock.yaml
+
+# Framework specific
+.plasmo/
+.wxt/
 
 # temporary ignore
 README.md
 
 # local env files
 .env*.local
-
-

@@ -1,5 +1,3 @@
-import browser from 'webextension-polyfill'
-
 import { generateMDLink } from 'src/lib/link'
 
 const [currTab] = await browser.tabs.query({

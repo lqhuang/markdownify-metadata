@@ -10,17 +10,14 @@ const [currTab] = await browser.tabs.query({
 // console.log(currTab)
 const { title, url, status } = currTab
 
-if (status === 'complete') {
+if (status === 'complete' && url) {
   const response = await browser.tabs.executeScript({
     code: `document.documentElement.outerHTML`,
   })
   // console.log(response.length)
   const html = response[0] as string
-  const url = currTab.url!
   const linkString = generateMDLink(url, html, {})
-  document.querySelector('#popup-content')!.innerHTML = `
-      <code>${linkString}</code>
-    `
+  document.querySelector('#popup-content')!.innerHTML = linkString
   await navigator.clipboard.writeText(linkString)
 } else {
   document.querySelector('#popup-content')!.innerHTML = `

@@ -1,7 +1,8 @@
 import type { PluginOptions } from 'vite-plugin-web-extension'
 import type { Manifest } from 'webextension-polyfill'
 
-import react from '@vitejs/plugin-react-swc'
+// import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import webExtension from 'vite-plugin-web-extension'
 
@@ -50,9 +51,6 @@ const webExtConfig: PluginOptions['webExtConfig'] = {
 
 export default defineConfig({
   plugins: [react(), webExtension({ manifest, webExtConfig })],
-  define: {
-    'import.meta.vitest': undefined,
-  },
   resolve: {
     alias: {
       src: `${__dirname}/src`,

@@ -11,7 +11,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "paths": { "src/*": ["./src/*"] },
+    "paths": { "src/*": ["./src/*"], "~*": ["./src/*"] },
     "baseUrl": ".",
     "verbatimModuleSyntax": true,
     // Emit
@@ -22,6 +22,7 @@
     "allowJs": true,
     "checkJs": true,
     // Interop Constraints
+    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
@@ -45,6 +46,6 @@
     ".prettierrc.mjs",
     ".eslint.config.mjs"
   ],
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist", "build", "node_modules"],
   "extends": "plasmo/templates/tsconfig.base"
 }

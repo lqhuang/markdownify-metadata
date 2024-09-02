@@ -1,5 +1,10 @@
-// Put all the javascript code here, that you want to execute after page load.
-// import browser from 'webextension-polyfill'
+import type { PlasmoCSConfig } from 'plasmo'
+
+export const config: PlasmoCSConfig = {
+  matches: ['<all_urls>'],
+  all_frames: true,
+  run_at: 'document_end',
+}
 
 // console.log('content_script.js loaded')
 

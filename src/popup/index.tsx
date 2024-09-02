@@ -1,7 +1,29 @@
-import { useState } from 'react'
+import type { RequestBody, ResponseBody } from 'src/content/messages/get-html'
 
-function IndexPopup() {
-  const [data, setData] = useState('')
+import { useEffect, useState } from 'react'
+
+import { sendToContentScript } from '@plasmohq/messaging'
+
+import { generateMDLink } from 'src/lib/link'
+
+import 'src/style/global.css'
+
+export default function IndexPopup() {
+  const [data, setData] = useState('Page is not ready yet')
+
+  useEffect(() => {
+    const fetching = async () => {
+      const { html, url } = await sendToContentScript<
+        RequestBody,
+        ResponseBody
+      >({ name: 'whatever', body: undefined }, window)
+      const linkString = generateMDLink(url, html, {})
+      setData(linkString)
+      await navigator.clipboard.writeText(linkString)
+    }
+
+    fetching().catch(console.error)
+  })
 
   return (
     <div
@@ -9,19 +31,7 @@ function IndexPopup() {
         padding: 16,
       }}
     >
-      <h2>
-        Welcome to your{' '}
-        <a href="https://www.plasmo.com" target="_blank">
-          Plasmo
-        </a>{' '}
-        Extension!
-      </h2>
-      <input onChange={e => setData(e.target.value)} value={data} />
-      <a href="https://docs.plasmo.com" target="_blank">
-        View Docs
-      </a>
+      {data}
     </div>
   )
 }
-
-export default IndexPopup

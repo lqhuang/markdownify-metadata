@@ -1,9 +1,15 @@
 node_modules/
+.plasmo/
+build/
 dist/
-web-ext-artifacts/
+out/
 pnpm-lock.yaml
 tmp/
 
 # temporary ignore
-.npmrc
 README.md
+
+# local env files
+.env*.local
+
+

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 
-import browser from 'webextension-polyfill'
+import { browser } from 'wxt/browser'
 
-import { generateMDLink } from 'src/lib/link'
+import { generateMDLink } from '@/lib/link'
 
-import 'src/style/global.css'
+import '@/styles/globals.css'
 
-export const Popup = () => {
+export function App() {
   const [data, setData] = useState('Page is not ready yet')
 
   useEffect(() => {

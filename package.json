@@ -6,7 +6,7 @@
   "author": "Lanqing Huang <lqhuang@outlook.com>",
   "type": "module",
   "scripts": {
-    "dev": "wxt",
+    "dev": "wxt -b firefox",
     "dev:firefox": "wxt -b firefox",
     "dev:chrome": "wxt -b chrome",
     "build": "wxt build",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0",
+    "clsx": "^2.1.1",
     "es-toolkit": "^1.35.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",

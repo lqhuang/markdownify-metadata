@@ -1,5 +1,5 @@
 import { load, type CheerioAPI } from 'cheerio'
-import { getMetaData } from 'src/metadata'
+import { getMetaData } from '@/metadata'
 
 export const makeGithubLink = (doc: CheerioAPI) => {
   const title = getMetaData('title', doc)

@@ -1,5 +1,4 @@
 import type { CheerioAPI } from 'cheerio'
-import type { MetaProperty } from 'typescript'
 
 export type Rule<T> = (doc: CheerioAPI) => T | undefined
 

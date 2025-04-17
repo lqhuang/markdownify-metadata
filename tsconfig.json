@@ -11,9 +11,8 @@
     // Modules
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "moduleDetection": "force",
     "resolveJsonModule": true,
-    "paths": { "src/*": ["./src/*"] },
-    "baseUrl": ".",
     "verbatimModuleSyntax": true,
     // Emit
     "declaration": true,
@@ -36,6 +35,15 @@
     "skipLibCheck": true,
     "incremental": true
   },
-  "include": ["src/", "tests/", ".prettierrc.js", "eslint.config.js"],
-  "exclude": ["dist", "build", "node_modules"]
+  "include": [
+    "src/",
+    "tests/",
+    ".prettierrc.js",
+    "eslint.config.js",
+    "postcss.config.js",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "wxt.config.ts"
+  ],
+  "exclude": ["dist", "build/", "node_modules/", ".output/"]
 }

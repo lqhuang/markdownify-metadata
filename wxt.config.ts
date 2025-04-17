@@ -10,15 +10,13 @@ export default defineConfig({
     action: {},
     permissions: [
       'storage',
-      'unlimitedStorage',
       'sidePanel',
-      'declarativeNetRequestWithHostAccess',
       'scripting',
       'tabs',
       'activeTab',
       'clipboardWrite',
     ],
-    host_permissions: ['https://github.com'],
+    host_permissions: ['https://github.com/*'],
     optional_host_permissions: ['https://*/*', 'wss://*/*'],
   },
 })

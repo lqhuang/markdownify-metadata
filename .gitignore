@@ -1,14 +1,15 @@
 node_modules/
 build/
 dist/
+.output/
 out/
 tmp/
 pnpm-lock.yaml
+tsconfig.tsbuildinfo
 
 # Framework specific
 .plasmo/
 .wxt/
-.output/
 
 # temporary ignore
 README.md

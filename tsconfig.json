@@ -9,7 +9,7 @@
     "types": ["vite/client", "vitest/importMeta"],
     // Modules
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "paths": { "src/*": ["./src/*"] },
     "baseUrl": ".",
@@ -30,7 +30,7 @@
     // Language and Environment
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     // Completeness
     "skipLibCheck": true,
     "incremental": true

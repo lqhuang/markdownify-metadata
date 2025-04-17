@@ -8,6 +8,7 @@ pnpm-lock.yaml
 # Framework specific
 .plasmo/
 .wxt/
+.output/
 
 # temporary ignore
 README.md

@@ -1,4 +1,5 @@
 {
+  "extends": "./.wxt/tsconfig.json",
   "compilerOptions": {
     // Type Checking
     "noFallthroughCasesInSwitch": true,
@@ -6,7 +7,7 @@
     "noImplicitReturns": true,
     "strict": true,
     "strictNullChecks": true,
-    "types": ["vite/client", "vitest/importMeta"],
+    "types": ["vitest/importMeta"],
     // Modules
     "module": "ESNext",
     "moduleResolution": "bundler",
@@ -35,15 +36,6 @@
     "skipLibCheck": true,
     "incremental": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.cjs",
-    "**/*.mjs",
-    ".prettierrc.mjs",
-    ".eslint.config.mjs"
-  ],
+  "include": ["src/", "tests/", ".prettierrc.js", "eslint.config.js"],
   "exclude": ["dist", "build", "node_modules"]
 }

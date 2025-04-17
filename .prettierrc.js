@@ -1,5 +1,6 @@
+/* eslint-disable @eslint-react/naming-convention/filename */
 /** @type {import('prettier').Config} */
-const config = {
+export default {
   trailingComma: 'all',
   tabWidth: 2,
   semi: false,
@@ -9,5 +10,3 @@ const config = {
   arrowParens: 'avoid',
   plugins: ['prettier-plugin-tailwindcss'],
 }
-
-export default config

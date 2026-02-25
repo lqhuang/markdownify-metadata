@@ -1,18 +1,21 @@
 //@ts-check
-import tsESLint from 'typescript-eslint'
+import { defineConfig } from 'eslint/config'
+import tseslint from 'typescript-eslint'
 // @ts-expect it's fine without types
 import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintReact from '@eslint-react/eslint-plugin'
 
-export default tsESLint.config(
+import autoImports from './.wxt/eslint-auto-imports.mjs'
+
+export default defineConfig(
+  autoImports,
   eslintConfigPrettier,
-  tsESLint.configs.recommendedTypeChecked,
-  tsESLint.configs.stylisticTypeChecked,
+  tseslint.configs.recommendedTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
   {
     languageOptions: {
       parserOptions: {
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
+        projectService: true,
       },
     },
   },
@@ -31,5 +34,5 @@ export default tsESLint.config(
       '@typescript-eslint/no-unused-expressions': 'off',
     },
   },
-  { ignores: ['dist/**'] },
+  { ignores: ['dist/', '.wxt/', '.output/'] },
 )

@@ -16,7 +16,7 @@ export default defineConfig({
       'activeTab',
       'clipboardWrite',
     ],
-    host_permissions: ['https://github.com/*'],
+    host_permissions: ['https://github.com/*', 'https://gitlab.com/*'],
     optional_host_permissions: ['https://*/*', 'wss://*/*'],
   },
 })

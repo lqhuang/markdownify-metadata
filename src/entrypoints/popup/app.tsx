@@ -7,7 +7,7 @@ import { generateMDLink } from '@/lib/link'
 import '@/styles/globals.css'
 
 export function App() {
-  const [data, setData] = useState('Page is not ready yet')
+  const [data, setData] = useState('Page is not ready or not supported yet.')
 
   useEffect(() => {
     const fetching = async () => {
@@ -18,12 +18,13 @@ export function App() {
       })
       const { title, url, status } = currTab
       if (status === 'complete' && url) {
-        const response = await browser.tabs.executeScript({
-          code: `document.documentElement.outerHTML`,
+        const response = await browser.scripting.executeScript({
+          target: { tabId: currTab.id! },
+          func: () => document.documentElement.outerHTML,
         })
         // console.log(response.length)
-        const html = response[0] as string
-        const linkString = generateMDLink(url, html, {})
+        const html = response[0].result
+        const linkString = generateMDLink(url, html!, {})
 
         setData(linkString)
 
